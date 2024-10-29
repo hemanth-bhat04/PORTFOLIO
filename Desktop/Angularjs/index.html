@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script type = "text/javascript">
+        var app = angular.module("sample",[]);
+        app.controller("emp",["$scope",function(c){
+            c.name = "Hemanth";
+            c.sal  = 45000;
+            c.getsal =  function(){return  c.sal*12;}
+
+
+        }]);
+
+        app.controller("cust",["$scope",function(d){
+            d.name = "Rahul";
+            d.age = 25;
+        }]);
+    </script>
+
+</head>
+<body ng-app = "sample">
+    <div ng-controller = "emp">
+       <h1> Hello {{name}}, looks like you get {{ sal}} as salary.Your annual salary is {{getsal()}}</h1>
+    </div>
+    <div ng-controller = "cust">
+        <h1> Hello {{name}}, looks like your age is {{age}}</h1>
+     </div>
+</body>
+</html>

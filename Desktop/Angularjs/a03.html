@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="reviewApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Submission</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="a03.js"></script>
+</head>
+<body ng-controller="ReviewController">
+
+<div class="container mt-5">
+    <h2 class="text-center">Submit Your Review</h2>
+    <form name="reviewForm" ng-submit="submitReview()" novalidate>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" ng-model="review.name" required>
+            <div ng-show="reviewForm.name.$touched && reviewForm.name.$invalid" class="text-danger">
+                Name is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="reviewText">Review:</label>
+            <textarea class="form-control" id="reviewText" ng-model="review.text" required></textarea>
+            <div ng-show="reviewForm.reviewText.$touched && reviewForm.reviewText.$invalid" class="text-danger">
+                Review text is required.
+            </div>
+        </div>
+        
+
+        <button type="submit" class="btn btn-primary" ng-disabled="reviewForm.$invalid">Submit Review</button>
+    </form>
+
+    <h3 class="mt-5">Reviews:</h3>
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="rev in reviews">
+            <strong>{{ rev.name }}</strong>: {{ rev.text }}
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

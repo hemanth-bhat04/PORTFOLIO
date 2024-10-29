@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple AngularJS Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="MyController">
+    <h1>Welcome to My Simple AngularJS App!</h1>
+    
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name" ng-model="userName">
+    
+    <button ng-click="greet()">Greet</button>
+    
+    <h2>{{ greeting }}</h2>
+
+    <script>
+        
+        var app = angular.module('myApp', []);
+        
+    
+        app.controller('MyController', function($scope) {
+            $scope.userName = ''; // Initialize userName
+            $scope.greeting = ''; // Initialize greeting
+            
+        
+            $scope.greet = function() {
+                $scope.greeting = 'Hello, ' + $scope.userName + '!';
+            };
+        });
+    </script>
+</body>
+</html>

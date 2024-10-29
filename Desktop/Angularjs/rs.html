@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Tax Calculation Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div ng-controller="SalaryController">
+        <h1>Salary and Tax Calculator</h1>
+        <p>Name: {{ name }}</p>
+        <p>Salary: {{ salary  }}</p>
+        <p>Department: {{dept}}</p>
+        <div ng-controller="TaxController">
+            <h2>Tax Details</h2>
+            <p>Tax: {{ getTax()  }}</p>
+            <p>Net Income: {{ calculateNetIncome() }}</p>
+        </div>
+    </div>
+</body>
+</html>

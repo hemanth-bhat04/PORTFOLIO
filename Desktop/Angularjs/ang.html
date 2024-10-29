@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script type = "text/javascript">
+    var sample  = angular.module("sample",[]);
+    sample.controller("emp",function(){this.name="Hemanth"});//model
+</script>
+</head>
+<body ng-app = "sample">
+    <style>
+        h1{
+            color:blue;
+           text-align: center;
+        }
+    </style>
+   <div ng-controller = "emp as o"><!--Controller-->
+    <h1>Hello {{o.name}}!</h1> <!--View-->
+   </div>
+</body>
+</html>

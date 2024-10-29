@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ng-if Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="gg.js"></script>
+</head>
+<body ng-controller="MyController">
+
+    <button ng-click="toggleMessage()">Toggle Message</button>
+
+    <div ng-if="showMessage">
+        <h1>Hello, this is a conditional message!</h1>
+    </div>
+</body>
+</html>

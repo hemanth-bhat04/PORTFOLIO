@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src = "d02.js"></script>
+</head>
+<body ng-app = "app">
+    <h1>Data Binding</h1>
+    <div ng-controller="emp">
+        
+        <div><h2>One time data binding using expressions</h2>
+        Value of a is {{a}}<br>
+        Value of b is {{b}}
+    </div>
+        <hr>
+        Value of a is <span ng-bind = "a"></span><br>
+        Value of b is <span ng-bind = "b"></span><br>
+        <hr>
+        Sum = {{sum}}
+        <button ng-click = "doDoubleandSum()">"Click Me"</button>
+        <hr>
+        Initial Value of a is {{::a}}
+    </div>
+    
+</body>
+</html>
